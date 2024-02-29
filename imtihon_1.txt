@@ -1,0 +1,19 @@
+DROP TABLE IF EXISTS users;
+
+CREATE TABLE IF NOT EXISTS users(
+	user_id GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+	fullname VARCHAR,
+	age INTEGER,
+	email CHAR(40),
+	phone INTEGER,
+	address VARCHAR(30)
+);
+
+INSERT INTO users(fullname, age, email, phone, address) VALUES 
+('Nodir Qodirov', 21, 'nodir@gmail.com', 901234455, 'Fergana'),
+('Toxir Botirov', 37, 'toxir@gmail.com', 931234455, 'Namangan'),
+('Yunus Aliyev', 23, 'yunus@gmail.com', 901237788, 'Andijon'),
+('Jalil Toxirov', 34, 'jalil@gmail.com', 941237896, 'Toshkent');
+
+SELECT * FROM users;
+

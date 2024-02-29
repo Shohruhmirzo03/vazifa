@@ -1,0 +1,87 @@
+-- DROP TABLE IF EXISTS users;
+
+-- CREATE TABLE IF NOT EXISTS users(
+-- 	user_id INTEGER NOT NULL UNIQUE,
+-- 	full_name VARCHAR,
+-- 	course CHAR(30)
+-- );
+
+-- INSERT INTO users(user_id, full_name, course) VALUES
+-- (1, 'Toxir Toxirov', 'Python'),
+-- (2, 'Sobir Sobirov', 'C#'),
+-- (3, 'Jalil Jalilov', 'Desing'),
+-- (4, 'Akmal Akmalov', 'Python');
+
+-- SELECT * FROM users;
+
+
+-- CREATE TABLE employees AS TABLE users;
+
+-- SELECT * FROM employees;
+
+-- DROP TABLE IF EXISTS students;
+-- CREATE TABLE IF NOT EXISTS students AS SELECT user_id, full_name FROM users WHERE user_id <= 2;
+
+-- SELECT * FROM students;
+
+
+-- DROP TABLE IF EXISTS students;
+-- CREATE TABLE IF NOT EXISTS students AS SELECT user_id, full_name, course FROM users WHERE course = 'Python';
+
+-- SELECT * FROM students;
+
+
+-- ------------------------------------------------------------------
+
+-- DROP TABLE IF EXISTS users;
+
+-- CREATE TABLE IF NOT EXISTS users(
+-- 	user_id INTEGER NOT NULL UNIQUE,
+-- 	full_name VARCHAR,
+-- 	course CHAR(30)
+-- );
+
+-- INSERT INTO users(user_id, full_name, course) VALUES
+-- (1, 'Toxir Toxirov', 'Python'),
+-- (2, 'Sobir Sobirov', 'C#'),
+-- (3, 'Jalil Jalilov', 'Desing'),
+-- (4, 'Akmal Akmalov', 'Python');
+
+-- SELECT * FROM users;
+
+
+-- DROP TABLE IF EXISTS students;
+-- SELECT user_id, full_name, course INTO TABLE students FROM users;
+-- SELECT * FROM students;
+
+
+-- DROP TABLE IF EXISTS students;
+-- SELECT user_id, full_name, course INTO TABLE students FROM users WHERE course = 'Python';
+-- SELECT * FROM students;
+
+
+-- ------------------------------------------------------------------
+
+DROP TABLE IF EXISTS users;
+
+CREATE TABLE IF NOT EXISTS users(
+	user_id SERIAL NOT NULL UNIQUE,
+	name CHAR(20),
+	lastname CHAR(30),
+	age INTEGER,
+	phone INTEGER,
+	email address VARCHAR
+);
+
+INSERT INTO students(name, lastname, age, phone, email address) VALUES 
+('Toxir', 'Toxirov', 21, 901234455, 'toxir@gmail.com'),
+('Sobir', 'Sobirov', 24, 901236677, 'toxir@gmail.com'),
+('Sulton', 'Karimov', 34, 901230099, 'toxir@gmail.com'),
+('Bekzod', 'Nosirov', 42, 901238877, 'toxir@gmail.com'),
+('Salim', 'Raximov', 19, 901232345, 'toxir@gmail.com'),
+
+
+
+INSERT INTO students(student_id, full_name) VALUES (1, 'Toxir');
+
+SELECT * FROM students;

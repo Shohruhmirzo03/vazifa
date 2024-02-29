@@ -1,0 +1,27 @@
+-- Drop table if exists orders;
+
+-- CREATE TABLE IF NOT EXISTS orders(
+-- 	m_id INTEGER GENERATED ALWAYS AS IDENTITY,
+-- 	nomi VARCHAR(50),
+-- 	narxi INTEGER,
+-- 	soni INTEGER,
+-- 	b_vaqti TIME default current_time,
+-- 	b_sanasi DATE default current_date,
+-- 	y_berishvaqti TIME default current_time,
+-- 	y_berildi TIMESTAMP default current_timestamp
+-- );
+
+-- INSERT INTO orders(nomi, narxi, soni) VALUES
+-- ('pitsa', 55000, 2),
+-- ('noutbuk', 5800000, 1),
+-- ('telefon', 1800000, 4),
+-- ('kurtka', 169000, 1),
+-- ('kitob', 70000, 1);
+
+-- SELECT * , TO_CHAR(b_sanasi, 'dd.mm.yyyy'), TO_CHAR(b_vaqti, 'hh:mm:ss'), TO_CHAR(y_berildi, 'dd.mm.yyyy hh:mm:ss'),  TO_CHAR(y_berishvaqti, 'dd.mm.yyyy') FROM orders;
+
+
+-- SELECT * FROM orders;
+
+-->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+

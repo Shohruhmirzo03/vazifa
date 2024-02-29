@@ -1,0 +1,105 @@
+-- 1-ish
+
+-- DROP TABLE books;
+
+-- CREATE TABLE books(
+--     book_id INTEGER UNIQUE GENERATED ALWAYS AS IDENTITY,
+-- 	book_name VARCHAR(50),
+-- 	pages INTEGER
+-- );
+
+
+-- INSERT INTO books (book_name, pages) VALUES
+-- ('Ozbekiston', 275),
+-- ('Osha shu kuni',480),
+-- ('Mexrobdan chayon', 390),
+-- ('Otgan kunlar', 450);
+
+-- SELECT * FROM books;
+
+
+-- ALTER TABLE IF EXISTS books
+-- RENAME TO kitoblar;
+
+-- Drop TABLE kitoblar;
+-- SELECT * FROM kitoblar;
+
+-- ALTER TABLE IF EXISTS kitoblar
+-- ADD COLUMN nomlar VARCHAR(10);
+
+-- ALTER TABLE IF EXISTS kitoblar
+-- ADD COLUMN IF NOT EXISTS muallifi VARCHAR(30) DEFAULT 'Abdulla Qodiriy';
+
+-- ALTER TABLE IF EXISTS kitoblar
+-- DROP COLUMN IF EXISTS nomlar;
+
+
+-- ALTER TABLE IF EXISTS kitoblar
+-- RENAME COLUMN book_name TO kitoblar_nomi;
+
+-- ALTER TABLE IF EXISTS kitoblar
+-- RENAME COLUMN book_id TO kitoblar_raqami;
+
+
+-- ALTER TABLE IF EXISTS kitoblar
+-- RENAME COLUMN pages TO sahifalari;
+
+----------------------------------------------------------------------->>>
+--2-ish
+
+DROP TABLE users;
+
+CREATE TABLE users(
+	user_id INTEGER UNIQUE GENERATED ALWAYS AS IDENTITY,
+	full_name VARCHAR(50),
+	phone INTEGER,
+	email VARCHAR,
+	address CHAR(30)
+);
+
+CREATE SEQUENCE seq3 START 1 INCREMENT 1;
+
+SELECT nextval('seq3');
+
+INSERT INTO users (full_name, phone, email, address) VALUES
+('Toxir Salimov', 901234455, 'toxir@gmail.com', 'Fergana'),
+('Salim Toxirov', 931234455, 'salim@gmail.com', 'Sirdaryo'),
+('Karim Raximov', 945670099, 'karim@gmail.com', 'Toshkent'),
+('Odil Sultonov', 998761122, 'odil@gmail.com', 'Namangan');
+
+
+SELECT * FROM users;
+
+
+
+
+
+
+ALTER TABLE IF EXISTS users
+ADD COLUMN kasbi VARCHAR(10);
+
+ALTER TABLE IF EXISTS users
+ADD COLUMN otasining_ismi VARCHAR(10);
+
+
+
+SELECT * FROM users;
+
+ALTER TABLE IF EXISTS users
+RENAME COLUMN user_id TO foydanaluvchi_raqami;
+
+ALTER TABLE IF EXISTS users
+RENAME COLUMN full_name TO toliq_ismi;
+
+
+ALTER TABLE IF EXISTS users
+RENAME COLUMN phone TO tel_nomeri;
+
+
+ALTER TABLE IF EXISTS users
+RENAME COLUMN email TO elektron_pochtasi;
+
+
+
+ALTER TABLE IF EXISTS users
+RENAME COLUMN address TO manzili;

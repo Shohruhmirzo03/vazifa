@@ -1,0 +1,28 @@
+
+DROP TABLE IF EXISTS brands;
+DROP TABLE IF EXISTS models;
+
+CREATE TABLE IF NOT EXISTS brands(
+	brand_id INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+	brand_name VARCHAR
+);
+
+INSERT INTO brands(brand_name) VALUES
+('Apple', 'Samsung', 'Nokia')
+
+CREATE TABLE IF NOT EXISTS models(
+	model_id INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+	model_name VARCHAR(50),
+	model_price INTEGER,
+	model_count INTEGER,
+	brand_id INTEGER REFERENCES brands(brand_id)
+);
+
+INSERT INTO models(model_name, model_price, model_count) VALUES
+('Apple 10', 10000000, 20),
+('Samsung A10', 20000000, 40),
+('Nokia 1280', 300000, 80 );
+
+Select * from models;
+
+Select * from brands;

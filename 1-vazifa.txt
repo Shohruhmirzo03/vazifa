@@ -1,0 +1,77 @@
+-- DROP TABLE IF EXISTS users;
+-- 
+-- 
+-- CREATE TABLE IF NOT EXISTS users(
+-- 	id INTEGER PRIMARY KEY AUTOINCREMENT,
+-- 	name TEXT, 
+-- 	lastname TEXT,
+-- 	age INTEGER,
+-- 	phone INTEGER,
+-- 	email TEXT,
+-- 	address TEXT
+-- );
+-- 
+-- INSERT INTO users(name, lastname, age, phone, email, address)
+-- VALUES
+-- ('SOBIR', 'QODIROV', 20, 901234455, 'sobir@gmail.com', 'FERGANA'),
+-- ('TOXIR', 'VALIYEV', 20, 901234567, 'toxir@gmail.com', 'JIZZAX'),
+-- ('SALIM', 'UMAROV', 20, 901230987, 'salim@gmail.com', 'TOSHKENT'),
+-- ('SHUKUR', 'ANVAROV', 20, 901233456, 'shukur@gmail.com', 'NAMANGAN'),
+-- ('RAXIM', 'SALIMOV', 20, 901234458, 'rahim@gmail.com', 'ANDIJON');
+-- 
+-- 
+-- 
+-- UPDATE users
+-- SET name = 'SHOHRUH' WHERE id = 1;
+-- 
+-- UPDATE users
+-- SET phone = 905076607 WHERE id = 1;
+-- 
+-- UPDATE users
+-- set lastname = 'HAKIMOV' WHERE id = 2;
+-- 
+-- UPDATE users
+-- SET address = 'XORAZM' WHERE id = 2;
+-- 
+-- 
+-- DELETE FROM users WHERE id = 3
+
+--------------------------------------------------------------------->>>
+
+
+DROP TABLE IF EXISTS catigories;
+
+CREATE TABLE IF NOT EXISTS catigories(
+	c_id INTEGER PRIMARY KEY AUTOINCREMENT,
+	fruits TEXT,
+	fastfood TEXT,
+	clothes TEXT,
+	shoes TEXT
+);
+
+
+DROP TABLE IF EXISTS products;
+
+CREATE TABLE IF NOT EXISTS products(
+	product_id INTEGER PRIMARY KEY AUTOINCREMENT,
+	name TEXT,
+	price TEXT, 
+	c_id INTEGER REFERENCES catigories(c_id) 
+);
+
+
+INSERT INTO catigories(fruits) VALUES ('APPLE'), ('CHERRY');
+
+INSERT INTO catigories(fastfood) VALUES ('BURGER'), ('HODDOG');
+
+INSERT INTO catigories(clothes) VALUES ('JACKET'), ('HAT');
+
+INSERT INTO catigories(shoes) VALUES ('SLIPPERS'), ('BOOTS');
+
+INSERT INTO products(name, price) 
+VALUES 
+('APPLE', 15000),
+('CHERRY', 25000);
+
+SELECT name, price, fruits FROM products JOIN catigories
+ON products.product_id = catigories.c_id;

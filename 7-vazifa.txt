@@ -1,0 +1,44 @@
+CREATE TABLE IF NOT EXISTS products(
+	product_id UUID DEFAULT uuid_generate_v4(),
+	product_name VARCHAR(30),
+	price INTEGER CHECK(price>0)
+);
+
+INSERT INTO products(product_name, price) VALUES
+('olma', 25000),
+('behi', 17000),
+('olcha', 14000),
+('gilos', 18000);
+
+SELECT * FROM products;
+
+-----------------------------------------------------------------------------------------------
+
+-- CREATE TABLE IF NOT EXISTS cars(
+-- 	car_id UUID DEFAULT uuid_generate_v4(),
+-- 	car_name CHAR(30),
+-- 	price INTEGER,
+-- 	speed INTEGER,
+-- 	CHECK(price>0 and speed>0 and speed<300)
+-- ),
+
+-- INSERT INTO cars(price, speed) VALUES
+-- ('Malibu', 30000, 250),
+-- ('Nexia', 8000, 170),
+-- ('Captiva', 25000, 60),
+-- ('Jetour', 38000, 76),
+-- ('Gentra', 15000, 70);
+
+-- SELECT * FROM cars;
+
+-- ALTER TABLE IF EXISTS cars
+-- RENAME COLUMN price TO narxi;
+
+-- ALTER TABLE IF EXISTS cars
+-- RENAME COLUMN cars_name TO mashinalar_nomi;
+
+-- ALTER TABLE IF EXISTS cars
+-- ADD COLUMN color VARCHAR(10);
+
+-- ALTER TABLE IF EXISTS cars
+-- ADD COLUMN brand VARCHAR(10);

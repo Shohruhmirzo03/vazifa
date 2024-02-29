@@ -1,0 +1,79 @@
+-- Drop table if exists orders;
+
+-- CREATE TABLE IF NOT EXISTS orders(
+-- 	m_id INTEGER GENERATED ALWAYS AS IDENTITY,
+-- 	nomi VARCHAR(50),
+-- 	narxi INTEGER,
+-- 	soni INTEGER,
+-- 	b_vaqti TIME default current_time,
+-- 	b_sanasi DATE default current_date,
+-- 	y_berishvaqti TIME default current_time,
+-- 	y_berildi TIMESTAMP default current_timestamp
+-- );
+
+-- INSERT INTO orders(nomi, narxi, soni) VALUES
+-- ('pitsa', 55000, 2),
+-- ('noutbuk', 5800000, 1),
+-- ('telefon', 1800000, 4),
+-- ('kurtka', 169000, 1),
+-- ('kitob', 70000, 1);
+
+-- SELECT * , TO_CHAR(b_sanasi, 'dd.mm.yyyy'), TO_CHAR(b_vaqti, 'hh:mm:ss'), TO_CHAR(y_berildi, 'dd.mm.yyyy hh:mm:ss'),  TO_CHAR(y_berishvaqti, 'dd.mm.yyyy') FROM orders;
+
+
+-- SELECT * FROM orders;
+
+-->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+drop table  if exists movies;
+
+CREATE TABLE IF NOT EXISTS movies(
+	m_id INTEGER GENERATED ALWAYS AS IDENTITY,
+	nomi VARCHAR(40),
+	vaqti TIME default current_time, 
+	hajmi INTEGER,
+	komediya BOOL,
+	jangari BOOL, 
+	drama BOOL,
+	sarguzasht BOOL,
+	triler BOOL,
+	bolalar_uchun BOOL,
+	korishlar_soni INTEGER,
+	like_soni INTEGER
+);
+
+
+INSERT INTO movies(nomi, hajmi, komediya, jangari, drama, sarguzasht, triler, bolalar_uchun, korishlar_soni, like_soni) VALUES
+('Tundan tongacha', 560, 'y', 'n', 'n', 'n', 'n', 'n', 10040200, 300000),
+('Kchli zarba', 1000, 'n', 'y', 'n', 'n', 'n', 'n', 40000000, 400000),
+('Hokim buva', 340, 'y', 'n', 'n', 'n', 'n', 'n', 17987000, 200000),
+('Gunoh', 605, 'n', 'n', 'y', 'n', 'n', 'n', 10040200, 400000),
+('Trollar saltanati', 740, 'n', 'n', 'n', 'y', 'n', 'y', 23900000, 500000),
+('Muxojir', 450, 'n', 'y', 'y', 'n', 'y', 'n', 10040200, 600000),
+('Boron qushlari', 470, 'n', 'n', 'n', 'y', 'n', 'y', 12340000, 300000),
+('Baron', 640, 'n', 'y', 'n', 'n', 'n', 'n', 23400000, 100000),
+('Qashqirlash makoni', 540, 'n', 'y', 'n', 'n', 'n', 'n', 10040200, 200000),
+('Ajoyib muammo', 890, 'y', 'y', 'n', 'y', 'n', 'y', 43222400, 400000),
+('Poyga', 430, 'y', 'y', 'n', 'n', 'y', 'n', 23400000, 300000);
+
+
+
+UPDATE movies
+SET nomi = 'Qora tanli bojalar', komediya = 'y' WHERE m_id = 8 ;
+
+UPDATE movies
+SET nomi = 'Qirol sher', bolalar_uchun = 'y' WHERE m_id = 6 ;
+
+UPDATE movies
+SET nomi = 'Forsaj', jangari = 'y' WHERE m_id = 2 ;
+
+DELETE FROM movies WHERE m_id = 1;
+
+DELETE FROM movies WHERE m_id = 9;
+
+DELETE FROM movies WHERE m_id = 7;
+
+
+
+
+Select * From movies;S
